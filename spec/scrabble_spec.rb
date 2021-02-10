@@ -24,4 +24,16 @@ describe Scrabble do
     it 'will return the correct score for a two letter word' do
       expect(subject.score("az")).to eq 11
     end
+
+    it 'will return the correct score for all letters in one category' do
+      expect(subject.score("eoiausltrn")).to eq 10
+    end
+
+    it 'will return the correct score for a word in two point categories' do
+      expect(subject.score("aiz")).to eq 12
+    end
+
+    it 'will return the correct score for a word with repeated letters' do
+      expect(subject.score("aaaaa")).to eq 5
+    end
 end

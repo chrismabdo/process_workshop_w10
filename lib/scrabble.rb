@@ -4,7 +4,7 @@ class Scrabble
     end
     def score(word)
         word.chars.each do |l|
-            if l == "a"
+            if l.match(/[aeioulnrst]/)
                 @score += 1
             elsif l == "z"
                 @score += 10
