@@ -6,7 +6,11 @@ class Scrabble
         word.chars.each do |l|
             if l.match(/[aeioulnrst]/)
                 @score += 1
-            elsif l == "z"
+            elsif l.match(/[bcmp]/)
+                @score += 3
+            elsif l.match(/[fhvwy]/)
+                @score += 4
+            elsif l.match(/[zq]/)
                 @score += 10
             end
         end

@@ -36,4 +36,12 @@ describe Scrabble do
     it 'will return the correct score for a word with repeated letters' do
       expect(subject.score("aaaaa")).to eq 5
     end
+
+    it 'will return the correct score for a word in three point categories' do
+      expect(subject.score("november")).to eq 15
+    end
+
+    it 'will return the correct score for a word in four point categories' do
+        expect(subject.score("jkfd")).to eq 19
+    end
 end
