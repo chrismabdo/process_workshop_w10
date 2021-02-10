@@ -1,9 +1,16 @@
 class Scrabble
+    def initialize
+        @score = 0
+    end
     def score(word)
-        if word.include?("a")
-            1
-        else
-            0
+        word.chars.each do |l|
+            if l == "a"
+                @score += 1
+            elsif l == "z"
+                @score += 10
+            end
         end
+       
+        @score
     end
 end

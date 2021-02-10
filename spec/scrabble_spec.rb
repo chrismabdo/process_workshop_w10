@@ -20,4 +20,8 @@ describe Scrabble do
     it 'will return the correct score for a one letter word' do
       expect(subject.score("a")).to eq 1
     end
+
+    it 'will return the correct score for a two letter word' do
+      expect(subject.score("az")).to eq 11
+    end
 end
