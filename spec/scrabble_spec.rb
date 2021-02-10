@@ -33,20 +33,20 @@ describe Scrabble do
       expect(subject.score("aiz")).to eq 12
     end
 
+    it 'will return the correct score for a word in all 7 point categories' do
+        expect(subject.score("jkfdbda")).to eq 25
+    end
+
     it 'will return the correct score for a word with repeated letters' do
       expect(subject.score("aaaaa")).to eq 5
-    end
-
-    it 'will return the correct score for a word in three point categories' do
-      expect(subject.score("november")).to eq 15
-    end
-
-    it 'will return the correct score for a word in four point categories' do
-      expect(subject.score("jkfd")).to eq 19
     end
 
     it 'will return 0 for any characters not in the scoresheet' do
       expect(subject.score("\t\n")).to eq 0
       expect(subject.score(nil)).to eq 0
+    end
+
+    it 'will return the correct score for capitalised letters' do
+        expect(subject.score("OXYPHENBUTAZONE")).to eq 41
     end
 end

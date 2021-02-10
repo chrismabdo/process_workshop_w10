@@ -4,7 +4,7 @@ class Scrabble
     end
     def score(word)
       if word != nil
-        word.chars.each do |l|
+        word.downcase.chars.each do |l|
             if l.match(/[aeioulnrst]/)
                 @score += 1
             elsif l.match(/[dg]/)
