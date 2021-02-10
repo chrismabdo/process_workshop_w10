@@ -42,6 +42,11 @@ describe Scrabble do
     end
 
     it 'will return the correct score for a word in four point categories' do
-        expect(subject.score("jkfd")).to eq 19
+      expect(subject.score("jkfd")).to eq 19
+    end
+
+    it 'will return 0 for any characters not in the scoresheet' do
+      expect(subject.score("\t\n")).to eq 0
+      expect(subject.score(nil)).to eq 0
     end
 end
